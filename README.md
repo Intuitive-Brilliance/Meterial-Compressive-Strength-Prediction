@@ -21,7 +21,7 @@
 <h3 align="center">Cement Compressive Strength Prediction</h3>
 
   <p align="center">
-     A ChatBot, built using the transformer-based DistilBERT algorithm, tailored to assist customers with their inquiries and guide them to the appropriate destination.
+     Complete end-to-end application comprising of Validation, Preprocessing, Training, and Prediction pipelines to extract the data, preprocess it, and train a model to determine the compressive strenght of cement given its constituent materials.
     <br />
 <!--<a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
@@ -69,9 +69,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-When customers visit a website, they often have many questions and concerns before making a purchase. This means that a customer service representative must be available to provide reassurance and answer their questions. However, it can be costly to have a team of representatives available to assist with the large number of customers a website may receive, especially since many of the questions are repetitive. 
-
-The Megatron ChatBot can help with this. Trained using the state-of-the-art DistilBERT algorithm and extensive customer query data, the chatbot can provide a wide range of answers, from finding solutions in its own database to searching the web for answers. In the rare case that the chatbot is unable to help, a customer service representative will be assigned to assist the customer directly.
+Determining the strength of materials is crucial in deciding which materials to use in applications, especially when the materials will be subjected to high stress or when human safety is involved. Standard testing procedures involve subjecting a sample of the material to stress testing until it breaks. However, this can be costly in terms of material, time, and personnel. One solution to this problem is to develop a regression model that can predict the strength of the material based on certain input factors, reducing the need for destructive testing.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,13 +78,13 @@ The Megatron ChatBot can help with this. Trained using the state-of-the-art Dist
 ### Built With
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
 ![Keras](https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
@@ -135,13 +133,43 @@ The ChatBot can be deployed on any website of your choice, however, the files ne
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Integration into any website
-- [ ] Text to speech and speech to text functionality
-- [ ] Translation funcationality
-- [ ] Admin panel for customized future modification
-  - [ ] U.I
-  - [ ] Retraining
-  - [ ] Addition and modification of pipelines
+- [ ] Validation Pipeline
+  - [ ] Load the data from Databases
+  - [ ] Varify the following parameters:
+   - [ ] Number of files
+   - [ ] Filename
+   - [ ] Number of columns
+   - [ ] Column name
+   - [ ] Datatype of the columns   
+- [ ] Preprocessing Pipeline
+  - [ ] Split the data into feature and label
+  - [ ] Check for multicollinearity and remove such features
+  - [ ] Remove non significant features
+  - [ ] Incorporate significant features
+  - [ ] Check for 0 STD columns
+  - [ ] Impute null values
+  - [ ] Transform/ Replace/ Remove unrecognizable data
+  - [ ] Standard scaling
+  - [ ] Normal distribution transformation
+  - [ ] Upscaling/ Downscaling
+  - [ ] Encode categorical values
+  - [ ] Impute categorical values
+- [ ] Training Pipeline
+  - [ ]  Create clusters
+  - [ ]  Filter based on cluster
+  - [ ]  Train each cluster with numerous ML Algorithms
+  - [ ]  Find best algorithm
+  - [ ]  Save the best algorithm for each cluster
+- [ ] Prediction Pipeline
+  - [ ] Validation Piepline
+  - [ ] Preprocessing Pipeline
+  - [ ] Load clustering model
+  - [ ] Classify the datapoints to their clusters
+  - [ ] Filter based on cluster
+  - [ ] Load corresponding model
+  - [ ] Predict label
+  - [ ] Export predictions 
+
 
 <!---See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).--->
 
